@@ -1,0 +1,33 @@
+
+<!--
+<div class="row m-3">
+
+
+  <div *ngFor ="let music of musics" class="card col-md-4 col-lg-2 col-sm-1" style="width: 18rem;">
+    <img class="card-img-top" src="{{music.artworkUrl60}}">
+    <div class="card-body">
+      <h5 class="card-title">{{music.artistName}}</h5>
+      <p class="card-text">{{music.subTitle}}</p>
+      <a [routerLink]="['/music',music.trackId]" class="btn btn-primary" target="_blank">Voir plus</a>
+    </div>
+  </div>
+</div>
+-->
+
+<div class="row m-6">
+  <div class="col-lg-4" *ngFor ="let music of musics">
+    <div class="card">
+      <img alt="Card image cap" class="card-img-top img-responsive" src="{{music.artworkUrl60}}">
+      <div class="card-body">
+        <div class="d-flex no-block align-items-center m-b-15">
+          <span><i class="ti-calendar"></i> 20 May 2018</span><div class="ml-auto">
+            <a class="link" href="javascript:void(0)">
+              <i class="ti-comments"></i> 3 Comments</a>
+            </div></div><h3 class="font-normal">
+              {{music.artistName}}</h3>
+    <p class="m-b-0 m-t-10">Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
+    <a  [routerLink]="['/music',music.trackId]" class="btn btn-primary btn-rounded waves-effect waves-light m-t-20">Read more</a>
+  </div></div>
+  </div>
+</div>
+
