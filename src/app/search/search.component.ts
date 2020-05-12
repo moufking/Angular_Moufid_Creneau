@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ItuneListService } from '../shared/itune_music.service';
 import {Injectable} from '@angular/core';
 import {MatDatepickerInputEvent} from '@angular/material/datepicker';
+import { formatDate } from '@angular/common';
 
 
 @Component({
@@ -53,6 +54,11 @@ export class SearchComponent implements OnInit {
 
     // tslint:disable-next-line:no-bitwise
     //event.value | date
+
+    const locale = 'en-US';
+    // tslint:disable-next-line:whitespace
+    const format = formatDate(event.value,'  yyyy-MM-ddh:mm:ss',locale );
+    console.log(format);
    // this.itunemusicservice.searchMusics(event.value);
   }
 
