@@ -15,6 +15,7 @@ import { formatDate } from '@angular/common';
 export class SearchComponent implements OnInit {
 
   events: string[] = [];
+  public status = false;
   minDate = new Date(2000, 0, 1);
   maxDate = new Date(2020, 0, 1);
 
@@ -57,8 +58,10 @@ export class SearchComponent implements OnInit {
 
     const locale = 'en-US';
     // tslint:disable-next-line:whitespace
-    const format = formatDate(event.value,'  yyyy-MM-ddh:mm:ss',locale );
-    console.log(format);
+    const format = formatDate(event.value,'yyyy-MM-ddThh:mm:ss',locale );
+    //console.log(format);
+   // tslint:disable-next-line:align
+     console.log(this.itunemusicservice.searchTime(format));
    // this.itunemusicservice.searchMusics(event.value);
   }
 
