@@ -3,8 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ItuneListService } from '../shared/itune_music.service';
 import {Injectable} from '@angular/core';
 import {MatDatepickerInputEvent} from '@angular/material/datepicker';
-import { Pipe, PipeTransform } from '@angular/core';
-import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -13,8 +11,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./search.component.css']
 })
 @Injectable()
-
-export class SearchComponent implements OnInit  {
+export class SearchComponent implements OnInit {
 
   events: string[] = [];
   minDate = new Date(2000, 0, 1);
@@ -55,7 +52,7 @@ export class SearchComponent implements OnInit  {
     console.log(event.value);
 
     // tslint:disable-next-line:no-bitwise
-    event.value | date:'yyyy-MM-dd'
+    //event.value | date
    // this.itunemusicservice.searchMusics(event.value);
   }
 
