@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: 'https://itunes.apple.com/'
+  apiEndpoint: 'http://localhost:8000/'
 };
 
 /*

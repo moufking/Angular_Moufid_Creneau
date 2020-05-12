@@ -15,6 +15,8 @@ import { AppConfigModule } from './app-config/app-config.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatCardModule} from '@angular/material/card';
+import { MaterialModule } from './material/material.module';
+
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import {MatCardModule} from '@angular/material/card';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatCardModule
+    MatCardModule,
+    MaterialModule
 
 
   ],

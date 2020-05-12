@@ -53,6 +53,12 @@ export class ItuneListService  {
     }
   }
 
+
+  public searchTime(query: string) {
+    this.query = query;
+    this.http.get(`${this.config.apiEndpoint}search?term=${this.query}`).subscribe((result) => console.log(result));
+  }
+
   public searchMusics(queryTitle: string) {
     this.query = queryTitle;
     this.loading = true;
