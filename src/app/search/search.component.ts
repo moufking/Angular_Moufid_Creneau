@@ -4,6 +4,8 @@ import { ItuneListService } from '../shared/itune_music.service';
 import {Injectable} from '@angular/core';
 import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 import { formatDate } from '@angular/common';
+import { MatSnackBar } from '@angular/material';
+
 
 
 @Component({
@@ -22,7 +24,8 @@ export class SearchComponent implements OnInit {
 
 
   term = '';
-  constructor(private router: Router, public route: ActivatedRoute, public itunemusicservice: ItuneListService) {
+  // tslint:disable-next-line:max-line-length
+  constructor(private router: Router, public route: ActivatedRoute, public itunemusicservice: ItuneListService, public snackBar: MatSnackBar) {
     const options = {
       headers: {
           'Content-Type': 'application/json'
@@ -61,7 +64,20 @@ export class SearchComponent implements OnInit {
     const format = formatDate(event.value,'yyyy-MM-ddThh:mm:ss',locale );
     //console.log(format);
    // tslint:disable-next-line:align
-     console.log(this.itunemusicservice.searchTime(format));
+     this.itunemusicservice.searchTime(format).subscribe((result) => {
+      this.status = result['available']
+      if (this.status) {
+        this.snackBar.open('Cette Horaire est disponible', '', {
+          duration: 2000,
+       });
+      } else {
+        this.snackBar.open('Cette Horaire n\'est disponible', '', {
+          duration: 2000,
+       });
+      }
+    }
+
+     );
    // this.itunemusicservice.searchMusics(event.value);
   }
 

@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatCardModule} from '@angular/material/card';
 import { MaterialModule } from './material/material.module';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -37,7 +39,8 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     MatSliderModule,
     MatCardModule,
-    MaterialModule
+    MaterialModule,
+    MatSnackBarModule
 
 
   ],

@@ -57,9 +57,8 @@ export class ItuneListService  {
   public searchTime(query: string) {
     this.query = query;
     // tslint:disable-next-line:max-line-length
-    this.http.get(`${this.config.apiEndpoint}resource/1337/available?datetime=${this.query}`).subscribe((result) => this.initialised = result['available']);
+    return this.http.get(`${this.config.apiEndpoint}resource/1337/available?datetime=${this.query}`);
   }
-
   public searchMusics(queryTitle: string) {
     this.query = queryTitle;
     this.loading = true;
