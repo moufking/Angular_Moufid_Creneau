@@ -52,7 +52,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  addEvent(type: string, event: MatDatepickerInputEvent) {
+  addEvent(type: string, event: MatDatepickerInputEvent<any>) {
     this.events.push(`${type}: ${event.value}`);
     console.log(event.value);
 
