@@ -54,18 +54,16 @@ export class SearchComponent implements OnInit {
 
   addEvent(type: string, event: MatDatepickerInputEvent<any>) {
     this.events.push(`${type}: ${event.value}`);
-    console.log(event.value);
-
-    // tslint:disable-next-line:no-bitwise
-    //event.value | date
+    //console.log(event.value);
 
     const locale = 'en-US';
     // tslint:disable-next-line:whitespace
     const format = formatDate(event.value,'yyyy-MM-ddThh:mm:ss',locale );
-    //console.log(format);
+    console.log(format);
    // tslint:disable-next-line:align
      this.itunemusicservice.searchTime(format).subscribe((result) => {
       this.status = result['available']
+      console.log(this.status);
       if (this.status) {
         this.snackBar.open('Cette Horaire est disponible', '', {
           duration: 2000,
